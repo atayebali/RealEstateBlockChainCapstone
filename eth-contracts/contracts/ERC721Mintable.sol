@@ -7,7 +7,6 @@ import "openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol";
 import "./Oraclize.sol";
 
 contract Ownable {
-    //  TODO's
     //  1) create a private '_owner' variable of type address with a public getter function
     address private _owner;
 
@@ -40,7 +39,7 @@ contract Ownable {
         onlyOwner
         realAddress(newOwner)
     {
-        // TODO add functionality to transfer control of the contract to a newOwner.
+        // add functionality to transfer control of the contract to a newOwner.
         // make sure the new owner is a real address
         _owner = newOwner;
         emit OwnerShipTransferred(newOwner);
@@ -52,7 +51,7 @@ contract Ownable {
 }
 
 contract Pausable is Ownable {
-    //  TODO's: Create a Pausable contract that inherits from the Ownable contract
+    //   Create a Pausable contract that inherits from the Ownable contract
     //  1) create a private '_paused' variable of type bool
     bool private _paused;
 
@@ -178,24 +177,40 @@ contract ERC721 is Pausable, ERC165 {
     }
 
     function balanceOf(address owner) public view returns (uint256) {
-        // TODO return the token balance of given address
+        // return the token balance of given address
         // TIP: remember the functions to use for Counters. you can refresh yourself with the link above
+        require(_ownedTokensCount[owner], "Address does not have a balance");
+        return _ownedTokensCount[owner].current();
     }
 
     function ownerOf(uint256 tokenId) public view returns (address) {
-        // TODO return the owner of the given tokenId
+        // return the owner of the given tokenId
+        require(_tokenOwner[tokenId], "Token is not valid");
+        return _tokenOwner[tokenId];
     }
 
     //    @dev Approves another address to transfer the given token ID
     function approve(address to, uint256 tokenId) public {
-        // TODO require the given address to not be the owner of the tokenId
-        // TODO require the msg sender to be the owner of the contract or isApprovedForAll() to be true
-        // TODO add 'to' address to token approvals
-        // TODO emit Approval Event
+        // require the given address to not be the owner of the tokenId
+        require(
+            to != ownerOf(tokenId),
+            "Caller is already an owner of this token"
+        );
+        //  require the msg sender to be the owner of the contract or isApprovedForAll() to be true
+        require(
+            msg.sender == _owner || isApprovedForAll(msg.sender, to),
+            "Not enought permissions to execute"
+        );
+        // add 'to' address to token approvals
+        _tokenApprovals[tokenId] = to; //Token is approvals
+        //  emit Approval Event
+        ApprovalForAll(ownerOf(tokenId), to, true);
     }
 
     function getApproved(uint256 tokenId) public view returns (address) {
-        // TODO return token approval if it exists
+        //  return token approval if it exists
+        require(_tokenApprovals[tokenId], "Approval does not exist");
+        return _tokenApprovals[tokenId];
     }
 
     /**
