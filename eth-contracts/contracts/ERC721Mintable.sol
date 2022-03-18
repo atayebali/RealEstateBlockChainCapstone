@@ -576,7 +576,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
         string memory symbol,
         string memory baseTokenURI
     ) public {
-        // TODO: set instance var values
+        //  set instance var values
         _name = name;
         _symbol = symbol;
         _baseTokenURI = baseTokenURI;
