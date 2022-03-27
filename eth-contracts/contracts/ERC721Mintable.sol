@@ -624,11 +624,7 @@ contract CustomERC721Token is
         "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/"
     )
 {
-    function mint(
-        address to,
-        uint256 tokenId,
-        string memory tokenURI
-    ) public onlyOwner returns (bool) {
+    function mint(address to, uint256 tokenId) public onlyOwner returns (bool) {
         super._mint(to, tokenId);
         super.setTokenURI(tokenId);
         if (super._exists(tokenId)) {
