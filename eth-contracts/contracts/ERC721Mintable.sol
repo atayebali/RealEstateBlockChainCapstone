@@ -14,7 +14,7 @@ contract Ownable {
 
     constructor() internal {
         _owner = msg.sender;
-        emit OwnerShipTransferred(_owner);
+        // emit OwnerShipTransferred(_owner);
     }
 
     //  3) create an 'onlyOwner' modifier that throws if called by any account other than the owner.
