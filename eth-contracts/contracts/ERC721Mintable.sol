@@ -617,7 +617,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     }
 }
 
-contract CustomERC721Token is
+contract ERC721MintableComplete is
     ERC721Metadata(
         "CustomToken",
         "CC",
