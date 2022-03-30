@@ -9,25 +9,15 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
     //  define a solutions struct that can hold an index & an address
     struct Solution {
-        uint256 index;
         address addr;
         bool exists;
     }
 
-    //  define an array of the above struct
-    Solution[] private solutionList;
     //  define a mapping to store unique solutions submitted
     mapping(bytes32 => Solution) solutions;
 
     // Create an event to emit when a solution is added
-    event SolutionAdded(uint256 index, address addr);
-
-    //  Create a function to add the solutions to the array and emit the event
-
-    modifier unique(bytes32 key) {
-        require(!solutions[key].exists, "The key is unique");
-        _;
-    }
+    event SolutionAdded(bytes32 key, address addr, bool exists);
 
     modifier validTx(
         uint256[2] memory a,
@@ -39,21 +29,14 @@ contract SolnSquareVerifier is ERC721MintableComplete, Verifier {
         _;
     }
 
-    function solutionAdd(bytes32 key, address verifyAddress)
-        public
-        unique(key)
-    {
-        Solution memory solution = Solution(
-            solutionList.length,
-            verifyAddress,
-            true
-        );
-        solutionList.push(solution);
+    function solutionAdd(bytes32 key, address verifyAddress) internal {
+        require(!solutions[key].exists, "The key is unique");
+        Solution memory solution = Solution(verifyAddress, true);
         solutions[key] = solution;
-        emit SolutionAdded(solution.index, verifyAddress);
+        emit SolutionAdded(key, verifyAddress, solutions[key].exists);
     }
 
-    // TODO Create a function to mint new NFT only after the solution has been verified
+    //  Create a function to mint new NFT only after the solution has been verified
     //  - make sure the solution is unique (has not been used before)
     //  - make sure you handle metadata as well as tokenSuplly
     function mint(
