@@ -10,14 +10,15 @@ Ganache CLI v6.12.2
 Docker 4.3.2 (for the zokrates setup and proof generation)
 
 # ABI
- [ Solution Verifier ](https://github.com/atayebali/RealEstateBlockChainCapstone/blob/main/eth-contracts/build/contracts/SolnSquareVerifier.json#L3)
+ [ SolutionVerifier ABI ](https://github.com/atayebali/RealEstateBlockChainCapstone/blob/main/eth-contracts/build/contracts/SolnSquareVerifier.json#L3)
 
 # Rinkeby Deployment Log
 
 `truffle-hdwallet-provider` Used in truffle config in order to deploy the contract to Rinkeby. 
 
-[Token Contract](https://rinkeby.etherscan.io/address/0xd57dcB4b13B1395853f1C2620c4474b3c118C8ba)
-[Verifier](https://rinkeby.etherscan.io/address/0x35b806322BdbBF7abA4AD612DfaAf37A58813607)
+[Token Contract on EtherScan](https://rinkeby.etherscan.io/address/0xd57dcB4b13B1395853f1C2620c4474b3c118C8ba)
+
+[Verifier on EtherScan](https://rinkeby.etherscan.io/address/0x35b806322BdbBF7abA4AD612DfaAf37A58813607)
 
 Output: 
 
@@ -60,6 +61,7 @@ Starting migrations...
 ```
 
 # Minted Tokens on EtherScan
+_source_: https://docs.opensea.io/docs/getting-started
 
 The tokens were generated with `minter.js` inside the `/tools` folder.  The tools folder contain the proofs that were used to generate the tokens below.
 
