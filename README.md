@@ -9,6 +9,9 @@ Ganache CLI v6.12.2
 
 Docker 4.3.2 (for the zokrates setup and proof generation)
 
+# ABI
+ [ Solution Verifier ](https://github.com/atayebali/RealEstateBlockChainCapstone/blob/main/eth-contracts/build/contracts/SolnSquareVerifier.json#L3)
+
 # Rinkeby Deployment Log
 
 `truffle-hdwallet-provider` Used in truffle config in order to deploy the contract to Rinkeby. 
@@ -85,7 +88,7 @@ The tokens were generated with `minter.js` inside the `/tools` folder.  The tool
 
 ### Open Sea Market
 
-[Market Place Seller ](https://testnets.opensea.io/collection/unidentified-contract-8axp39qidv)
+[Market Place Seller](https://testnets.opensea.io/collection/unidentified-contract-8axp39qidv)
 
 [Market Place Buyer](https://testnets.opensea.io/0xba73ae87e14be06ff5a41ef892c1b29157312ec1)
 
