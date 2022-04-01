@@ -22,7 +22,7 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const infuraURL = "https://rinkeby.infura.io/v3/7dd7f82195d2431592442b40ac4e620c";
 
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+const mnemonic = fs.readFileSync(".secret").toString().trim(); //boiler plate, file not committed.
 
 module.exports = {
   /**
