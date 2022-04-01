@@ -2,7 +2,7 @@
 const HDWalletProvider = require("truffle-hdwallet-provider")
 const web3 = require('web3')
 const fs = require('fs');
-const data = require("./.data.json")
+const data = require("./.data.json") //file not committed.
 const zkProofs = [
   require("./proof_1.json"),
   require("./proof_2.json"),
