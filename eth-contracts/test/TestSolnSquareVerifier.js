@@ -13,6 +13,8 @@ contract('TestSolnSquareVerifier', accounts => {
     this.contract = await SolnSquareVerifier.new({ from: owner });
   });
 
+
+
   it("New Solution is added and Token is minted ", async () => {
     let zkproof = proof.proof
     await this.contract.mint(
@@ -25,6 +27,13 @@ contract('TestSolnSquareVerifier', accounts => {
     )
 
     let bal = await this.contract.balanceOf.call(to)
+    let name = await this.contract.getName()
+    let uri = await this.contract.tokenURI(10)
+    let sym = await this.contract.getSymbol()
+    assert(name, "CustomToken")
+    assert(uri, "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/10")
+    assert(sym, "CC")
+
     assert(bal.toNumber(), 1, "Balance did not update correctly")
   })
 })
