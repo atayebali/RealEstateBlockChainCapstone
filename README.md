@@ -13,7 +13,8 @@ Docker 4.3.2 (for the zokrates setup and proof generation)
 
 `truffle-hdwallet-provider` Used in truffle config in order to deploy the contract to Rinkeby. 
 
-[Contract](https://rinkeby.etherscan.io/address/0x0CbE38cB45b34E01EBd8f9111001c918ee4742AB)
+[Token Contract](https://rinkeby.etherscan.io/address/0xd57dcB4b13B1395853f1C2620c4474b3c118C8ba)
+[Verifier](https://rinkeby.etherscan.io/address/0x35b806322BdbBF7abA4AD612DfaAf37A58813607)
 
 Output: 
 
@@ -26,46 +27,46 @@ Starting migrations...
 
    Deploying 'Verifier'
    --------------------
-   > transaction hash:    0xdc57fcfcc7b1d6d9346dc29a0c75aaf7a575f9d60ebf3693ed564a7b43193f97
-   > Blocks: 1            Seconds: 12
-   > contract address:    0x0F2aE729F695Ba12a940C9772477c726542E3BE6
-   > block number:        10425369
-   > block timestamp:     1648770643
+   > transaction hash:    0x6157adf503a33eed953a8b7ede618859db26af53cf85d891d7445517f3d74c1f
+   > Blocks: 0            Seconds: 12
+   > contract address:    0x35b806322BdbBF7abA4AD612DfaAf37A58813607
+   > block number:        10425986
+   > block timestamp:     1648779913
    > account:             0x59e71283baE474FAC070183Ec8ae9B6520Cd8d68
-   > balance:             18.671536092925034391
+   > balance:             18.663911330860648385
    > gas used:            967835 (0xec49b)
-   > gas price:           1.000000008 gwei
+   > gas price:           1.000000009 gwei
    > value sent:          0 ETH
-   > total cost:          0.00096783500774268 ETH
+   > total cost:          0.000967835008710515 ETH
 
 
    Replacing 'SolnSquareVerifier'
    ------------------------------
-   > transaction hash:    0x5714ef086b93296e9688ad58aadf29b320c9ec149895c33c7e345037596b3548
+   > transaction hash:    0x7f79bbcb7b6f88f6b842ef158bd99818049ce43fbe8c1c94c35eb0ccbf915713
    > Blocks: 1            Seconds: 12
-   > contract address:    0x0CbE38cB45b34E01EBd8f9111001c918ee4742AB
-   > block number:        10425370
-   > block timestamp:     1648770658
+   > contract address:    0xd57dcB4b13B1395853f1C2620c4474b3c118C8ba
+   > block number:        10425987
+   > block timestamp:     1648779928
    > account:             0x59e71283baE474FAC070183Ec8ae9B6520Cd8d68
-   > balance:             18.667569741893303583
-   > gas used:            3966351 (0x3c858f)
-   > gas price:           1.000000008 gwei
+   > balance:             18.659944991824951334
+   > gas used:            3966339 (0x3c8583)
+   > gas price:           1.000000009 gwei
    > value sent:          0 ETH
-   > total cost:          0.003966351031730808 ETH
+   > total cost:          0.003966339035697051 ETH
 
 ```
 
 # Minted Tokens on EtherScan
 
-The tokens were generated with `minter.js` inside the tools folder.  The tools folder contain the proofs that were used to generate the tokens below.
+The tokens were generated with `minter.js` inside the `/tools` folder.  The tools folder contain the proofs that were used to generate the tokens below.
 
-[ List of Tokens](https://rinkeby.etherscan.io/token/0xf8e0a638be1a111e28d04ccee597fdc7f57fa43e)
+[ List of Tokens](https://rinkeby.etherscan.io/address/0xd57dcb4b13b1395853f1c2620c4474b3c118c8ba)
 
- [Token 0](https://rinkeby.etherscan.io/tx/0xb577fece048af43997f55656f5b43b0fa82f09787581f0fee1c3b7fc0f848cba)
+[Token 0](https://rinkeby.etherscan.io/tx/0xb577fece048af43997f55656f5b43b0fa82f09787581f0fee1c3b7fc0f848cba)
 
- [Token 1](https://rinkeby.etherscan.io/tx/0x9ce1dfa4d4e3c6fbae9935dd84894b3035d5ca4a84c02607eb248835aba13c00)
+[Token 1](https://rinkeby.etherscan.io/tx/0x9ce1dfa4d4e3c6fbae9935dd84894b3035d5ca4a84c02607eb248835aba13c00)
 
- [Token 2](https://rinkeby.etherscan.io/tx/0x7375448b8173561a96dc5bdb3311178faad8cd8e6af1ddc7d9ea60263a4a46c9)
+[Token 2](https://rinkeby.etherscan.io/tx/0x7375448b8173561a96dc5bdb3311178faad8cd8e6af1ddc7d9ea60263a4a46c9)
 
 [Token 3](https://rinkeby.etherscan.io/tx/0x65c947340e57e624c73472d39f83271df8705483c5f94eabd4752f1f011da8db)
 
@@ -81,7 +82,12 @@ The tokens were generated with `minter.js` inside the tools folder.  The tools f
 
 [Token 9](https://rinkeby.etherscan.io/tx/0x641ddcdfdbdb7b6d8eadf4134e1cfc47089db426cde476e84821821ad1cc1e72)
 
-[Token 10](https://rinkeby.etherscan.io/tx/0xd3c5c4a9b3782b9e4b71953b7fdb4de483de0d0b78ffce273ba1c54748e18c4c)
+
+### Open Sea Market
+
+[Market Place Seller ](https://testnets.opensea.io/collection/unidentified-contract-8axp39qidv)
+
+[Market Place Buyer](https://testnets.opensea.io/0xba73ae87e14be06ff5a41ef892c1b29157312ec1)
 
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
